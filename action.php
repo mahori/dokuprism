@@ -20,7 +20,7 @@ class action_plugin_dokuprism extends DokuWiki_Action_Plugin {
         $event->data["link"][] = array (
             "type" => "text/css",
             "rel"  => "stylesheet", 
-            "href" => "https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css",
+            "href" => "https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/".$this->getConf('theme').".min.css",
         );
         // Adding javascript
         $event->data["script"][] = array (
