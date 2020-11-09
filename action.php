@@ -20,14 +20,22 @@ class action_plugin_dokuprism extends DokuWiki_Action_Plugin {
         $event->data["link"][] = array (
             "type" => "text/css",
             "rel"  => "stylesheet", 
-            "href" => DOKU_BASE."lib/plugins/dokuprism/prism/prism.css",
+            "href" => "https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css",
         );
         // Adding javascript
         $event->data["script"][] = array (
             "type"  => "text/javascript",
-            "src"   => DOKU_BASE."lib/plugins/dokuprism/prism/prism.js",
+            "src"   => "https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/prism.min.js",
             "_data" => "",
         );
+        $languages = explode('|', $this->getConf('lanuages_list'));
+        foreach ($languages as $language) {
+            $event->data["script"][] = array (
+                "type"  => "text/javascript",
+                "src"   => "https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-$language.min.js",
+                "_data" => "",
+            );
+        }
         return true;
     }
 
