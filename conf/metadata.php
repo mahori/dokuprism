@@ -9,3 +9,15 @@
 $meta['override_code'] = array('onoff');
 $meta['override_file'] = array('onoff');
 $meta['lanuages_list'] = array('string');
+$meta['theme'] = array (
+    'multichoice', '_choices' => array (
+        'prism',
+        'prism-coy',
+        'prism-dark',
+        'prism-funky',
+        'prism-okaidia',
+        'prism-solarizedlight',
+        'prism-tomorrow',
+        'prism-twilight',
+    )
+);
